@@ -5,7 +5,7 @@ import process from 'node:process';
 import zipPack from 'vite-plugin-zip-pack';
 import checker from 'vite-plugin-checker';
 import clean from 'vite-plugin-clean';
-import WextManifest from 'vite-plugin-wext-manifest';
+import WextManifest from './config/vite-plugin-wext-manifest/index.js';
 
 import type {Plugin} from 'vite';
 

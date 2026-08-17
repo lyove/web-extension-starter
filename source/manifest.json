@@ -2,7 +2,6 @@
   "manifest_version": 3,
   "name": "Sample WebExtension",
   "version": "0.0.0",
-
   "icons": {
     "16": "assets/icons/favicon-16.png",
     "32": "assets/icons/favicon-32.png",
@@ -10,7 +9,7 @@
     "128": "assets/icons/favicon-128.png"
   },
   "description": "Sample description",
-  "homepage_url": "https://github.com/abhijithvijayan/web-extension-starter",
+  "homepage_url": "https://github.com/lyove/web-extension-starter",
   "short_name": "Sample Name",
 
   "permissions": ["activeTab", "storage"],
@@ -27,7 +26,7 @@
     "extension_pages": "script-src 'self'; object-src 'self';"
   },
 
-  "__chrome|firefox__author": "abhijithvijayan",
+  "__chrome|firefox__author": "lyove",
 
   "__firefox__browser_specific_settings": {
     "gecko": {

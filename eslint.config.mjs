@@ -1,12 +1,13 @@
-import nodeConfig from '@abhijithvijayan/eslint-config/node';
-import tsConfig from '@abhijithvijayan/eslint-config/typescript';
-import reactConfig from '@abhijithvijayan/eslint-config/react';
+import nodeConfig from './config/eslint/node.js';
+import tsConfig from './config/eslint/typescript.js';
+import reactConfig from './config/eslint/react.js';
 
 export default [
 	{
 		ignores: [
 			'node_modules/**',
 			'extension/**',
+			'config/**',
 			'*.js',
 			'*.mjs',
 			'vite.config.ts',

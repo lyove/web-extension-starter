@@ -28,7 +28,7 @@ Replace the unified manifest with browser-specific versions:
     "128": "assets/icons/favicon-128.png"
   },
   "description": "Sample description",
-  "homepage_url": "https://github.com/abhijithvijayan/web-extension-starter",
+  "homepage_url": "https://github.com/lyove/web-extension-starter",
   "short_name": "Sample Name",
 
   "__chrome__permissions": [
@@ -57,7 +57,7 @@ Replace the unified manifest with browser-specific versions:
   },
   "__firefox__content_security_policy": "script-src 'self'; object-src 'self'",
 
-  "__chrome|firefox__author": "abhijithvijayan",
+  "__chrome|firefox__author": "lyove",
 
   "__firefox__applications": {
     "gecko": {
