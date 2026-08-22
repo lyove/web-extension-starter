@@ -18,7 +18,13 @@
 		"declaration": false,
 
 		/* React JSX transform */
-		"jsx": "react-jsx"
+		"jsx": "react-jsx",
+
+		/* Path aliases (must match vite.config.ts resolve.alias) */
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./source/*"]
+		}
 	},
 	"include": [
 		"source"

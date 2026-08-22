@@ -15,6 +15,7 @@ function buildIIFEScripts(options: {
   scripts: {name: string; entry: string}[];
   outDir: string;
   isDevelopment: boolean;
+  alias: Record<string, string>;
 }): Plugin {
   return {
     name: 'build-iife-scripts',
@@ -22,6 +23,11 @@ function buildIIFEScripts(options: {
       for (const script of options.scripts) {
         await build({
           configFile: false,
+          // IIFE builds run with configFile: false, so re-apply the
+          // path aliases (e.g. "@") that scripts rely on.
+          resolve: {
+            alias: options.alias,
+          },
           build: {
             write: true,
             outDir: options.outDir,
@@ -116,11 +122,14 @@ export default defineConfig(({ mode }) => {
 				scripts: [
 					{
 						name: 'contentScript',
-						entry: path.resolve(sourcePath, 'ContentScript/index.ts'),
+						entry: path.resolve(sourcePath, 'scripts/content/index.ts'),
 					},
 				],
 				outDir: getOutDir(),
 				isDevelopment,
+				alias: {
+					'@': sourcePath,
+				},
 			}),
 
 			!isDevelopment &&
@@ -145,11 +154,11 @@ export default defineConfig(({ mode }) => {
 				input: {
 					// For UI pages, use the HTML file as the entry.
 					// Vite will find the <script> tag inside and bundle it.
-					popup: path.resolve(sourcePath, 'Popup/popup.html'),
-					options: path.resolve(sourcePath, 'Options/options.html'),
+					popup: path.resolve(sourcePath, 'pages/popup/index.html'),
+					options: path.resolve(sourcePath, 'pages/options/index.html'),
 					// Background script (service worker in Chrome, background script in Firefox)
 					// Both MV3 implementations support ES modules
-					background: path.resolve(sourcePath, 'Background/index.ts'),
+					background: path.resolve(sourcePath, 'scripts/background/index.ts'),
 					// Note: contentScript is built separately as IIFE via buildIIFEScripts plugin
 				},
 

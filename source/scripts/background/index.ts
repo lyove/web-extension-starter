@@ -30,8 +30,8 @@
  */
 
 import browser from 'webextension-polyfill';
-import { ExtensionMessage, VisitCountResponseMessage } from '../types/messages';
-import { getStorage, setStorage } from '../utils/storage';
+import { ExtensionMessage, VisitCountResponseMessage } from '@/types/messages';
+import { getStorage, setStorage } from '@/utils/storage';
 
 browser.runtime.onInstalled.addListener((): void => {
   console.log('Extension installed');

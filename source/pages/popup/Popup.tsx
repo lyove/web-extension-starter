@@ -29,12 +29,12 @@
 import { useEffect, useState } from 'react';
 import type { FC } from 'react';
 import browser, { Tabs } from 'webextension-polyfill';
-import { getStorage } from '../utils/storage';
+import { getStorage } from '@/utils/storage';
 import {
   PageInfo,
   PageInfoResponseMessage,
   VisitCountResponseMessage,
-} from '../types/messages';
+} from '@/types/messages';
 import { TabInfo } from './components/TabInfo/TabInfo';
 import { FooterActions } from './components/FooterActions/FooterActions';
 import styles from './Popup.module.scss';
@@ -160,7 +160,7 @@ const Popup: FC = () => {
 
       <FooterActions
         onSettings={(): Promise<Tabs.Tab> =>
-          openWebPage('/Options/options.html')
+          openWebPage('/pages/options/index.html')
         }
         onGitHub={(): Promise<Tabs.Tab> =>
           openWebPage('https://github.com/lyove/web-extension-starter')

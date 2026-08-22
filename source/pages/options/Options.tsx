@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import type { FC } from 'react';
-import { getStorage, setStorage } from '../utils/storage';
-import { Button } from '../components/Button/Button';
-import { Input } from '../components/Input/Input';
-import { Checkbox } from '../components/Checkbox/Checkbox';
-import { GitHubIcon } from '../components/icons/GitHubIcon';
+import { getStorage, setStorage } from '@/utils/storage';
+import { Button } from '@/components/Button/Button';
+import { Input } from '@/components/Input/Input';
+import { Checkbox } from '@/components/Checkbox/Checkbox';
+import { GitHubIcon } from '@/components/icons/GitHubIcon';
 import styles from './Options.module.scss';
 
 const Options: FC = () => {

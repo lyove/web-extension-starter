@@ -26,8 +26,8 @@ import {
   ExtensionMessage,
   PageInfo,
   PageInfoResponseMessage,
-} from '../types/messages';
-import { getStorage } from '../utils/storage';
+} from '@/types/messages';
+import { getStorage } from '@/utils/storage';
 
 // Collect page information (word count, links, images)
 function getPageInfo(): PageInfo {
